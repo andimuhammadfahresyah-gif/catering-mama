@@ -1,0 +1,570 @@
+*/* =================================
+   RESET
+================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =================================
+   BODY
+================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8f5;
+    color: #222;
+
+    max-width: 480px;
+    margin: auto;
+
+    padding-bottom: 100px;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 22px;
+    color: #16733a;
+}
+
+header button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* =================================
+   MAIN
+================================= */
+
+main {
+    padding: 0 20px;
+}
+
+
+/* =================================
+   HALAMAN
+================================= */
+
+.page {
+    width: 100%;
+}
+
+
+/* =================================
+   BERANDA
+================================= */
+
+.welcome {
+    margin: 20px 0;
+}
+
+.welcome h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.welcome p {
+    color: #777;
+}
+
+
+/* =================================
+   RINGKASAN
+================================= */
+
+.summary {
+    display: flex;
+    gap: 12px;
+}
+
+.card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    flex: 1;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+    font-size: 25px;
+}
+
+.card strong {
+    display: block;
+
+    font-size: 28px;
+
+    margin-top: 8px;
+}
+
+.card p {
+    color: #777;
+}
+
+
+/* =================================
+   MENU HARI INI
+================================= */
+
+.menu-today {
+    margin-top: 28px;
+}
+
+.menu-today h2 {
+    margin-bottom: 12px;
+}
+
+
+/* =================================
+   CARD
+================================= */
+
+.menu-card {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.menu-card p {
+    padding: 8px 0;
+}
+
+
+/* =================================
+   TOMBOL
+================================= */
+
+.menu-button {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #16733a;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.menu-button:hover {
+    opacity: 0.9;
+}
+
+.menu-button:active {
+    transform: scale(0.98);
+}
+
+
+/* =================================
+   HALAMAN SEKOLAH
+================================= */
+
+#schoolPage {
+    padding-top: 25px;
+}
+
+#schoolPage h2 {
+    margin-bottom: 8px;
+}
+
+#schoolPage > p {
+    color: #666;
+
+    margin-bottom: 22px;
+}
+
+
+/* Kartu sekolah */
+
+#schoolPage .menu-card {
+    margin-bottom: 18px;
+}
+
+
+/* Nama sekolah */
+
+#schoolPage .menu-card h3 {
+    margin-bottom: 12px;
+}
+
+
+/* Informasi sekolah */
+
+#schoolPage .menu-card p {
+    margin: 7px 0;
+    padding: 0;
+}
+
+
+/* Tombol tambah sekolah */
+
+#addSchoolButton {
+    margin-top: 2px;
+}
+
+
+/* =================================
+   HALAMAN PORSI
+================================= */
+
+#portionPage {
+    padding-top: 25px;
+}
+
+#portionPage h2 {
+    margin-bottom: 8px;
+}
+
+#portionPage > p {
+    color: #666;
+    margin-bottom: 22px;
+}
+
+
+/* Baris sekolah */
+
+.portion-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.portion-row:last-child {
+    border-bottom: none;
+}
+
+.portion-row strong {
+    font-size: 18px;
+}
+
+
+/* =================================
+   TOTAL PORSI
+================================= */
+
+.total-portion {
+    background: #16733a;
+
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    margin-top: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.total-portion span:first-child {
+    margin-right: auto;
+
+    font-weight: bold;
+}
+
+.total-portion strong {
+    font-size: 28px;
+}
+
+
+/* =================================
+   NAVIGASI BAWAH
+================================= */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 480px;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    padding: 12px 5px;
+
+    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.08);
+
+    z-index: 100;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+
+    color: #555;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    padding: 3px 8px;
+}
+
+.bottom-nav span {
+    display: block;
+
+    font-size: 11px;
+
+    margin-top: 4px;
+}
+
+.bottom-nav a.active {
+    color: #16733a;
+
+    font-weight: bold;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 400px) {
+
+    main {
+        padding: 0 15px;
+    }
+
+    header {
+        padding: 18px 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .bottom-nav a {
+        font-size: 16px;
+    }
+
+    .bottom-nav span {
+        font-size: 10px;
+    }
+}
+
+/* =================================
+   BANK MENU
+================================= */
+
+#bankMenuPage {
+    padding-top: 25px;
+}
+
+#bankMenuPage h2 {
+    margin-bottom: 8px;
+}
+
+#bankMenuPage > p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+/* =================================
+   FORM TAMBAH MENU
+================================= */
+
+.menu-form {
+    background: white;
+    padding: 20px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.menu-form h3 {
+    margin-bottom: 20px;
+    color: #16733a;
+}
+
+
+/* Label */
+
+.menu-form label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Input */
+
+.menu-form input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+/* Input ketika diklik */
+
+.menu-form input:focus {
+    border-color: #16733a;
+}
+
+
+/* Tombol Simpan */
+
+#saveMenuButton {
+    margin-top: 22px;
+}
+
+/* =================================
+   DATA SISWA
+================================= */
+
+#studentPage {
+    padding-top: 25px;
+}
+
+#studentPage h2 {
+    margin-bottom: 8px;
+}
+
+#selectedSchool {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+/* Tombol kembali */
+
+.back-button {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #eeeeee;
+    color: #333;
+
+    font-size: 15px;
+    cursor: pointer;
+
+    margin-bottom: 15px;
+}
+
+
+/* Kartu siswa */
+
+.student-card {
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    margin-bottom: 15px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Nama siswa */
+
+.student-card h3 {
+    margin-bottom: 8px;
+}
+
+
+/* Informasi siswa */
+
+.student-card p {
+    margin: 6px 0;
+    color: #666;
+}
+
+
+/* Siswa dengan catatan khusus */
+
+.student-warning {
+    border-left: 5px solid #f0a500;
+}
+
+
+/* Catatan khusus */
+
+.special-note {
+    background: #fff7df;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    margin-top: 10px;
+
+    color: #8a6500 !important;
+
+    font-size: 14px;
+}
