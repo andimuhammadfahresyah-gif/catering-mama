@@ -1,508 +1,323 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Catering Mama</title>
 
-   <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- ================= HEADER ================= -->
 
     <header>
-        <h1>🍱 Catering Mama</h1>
-        <button>🔔</button>
+      <h1>🍱 Catering Mama</h1>
+      <button>🔔</button>
     </header>
 
-
     <main>
+      <!-- ================= BERANDA ================= -->
 
-        <!-- ================= BERANDA ================= -->
-
-        <section id="homePage" class="page">
-
-            <section class="welcome">
-                <h2>Selamat datang, Mama 👋</h2>
-                <p>Minggu, 30 Agustus 2026</p>
-            </section>
-
-
-            <section class="summary">
-
-                <div class="card">
-                    <h3>🏫</h3>
-                    <strong>5</strong>
-                    <p>Sekolah</p>
-                </div>
-
-                <div class="card">
-                    <h3>🍱</h3>
-                    <strong>850</strong>
-                    <p>Porsi Hari Ini</p>
-                </div>
-
-            </section>
-
-
-            <section class="menu-today">
-
-                <h2>Menu Hari Ini</h2>
-
-                <div class="menu-card">
-                    <p> Nasi Putih</p>
-                    <p> Ayam Kecap</p>
-                    <p> Sayur Sop</p>
-                    <p> Pisang</p>
-                </div>
-
-            </section>
-
-
-            <button class="menu-button">
-                Lihat Menu Mingguan
-            </button>
-
+      <section id="homePage" class="page">
+        <section class="welcome">
+          <h2>Selamat datang, Mama 👋</h2>
+          <p id="homeDate"></p>
         </section>
 
+        <section class="summary">
+          <div class="card">
+            <h3>🏫</h3>
+            <strong id="totalSchools">0</strong>
+            <p>Sekolah</p>
+          </div>
 
-        <!-- ================= MENU MINGGUAN ================= -->
-
-        <section id="menuPage" class="page" style="display: none;">
-
-            <h2>📅 Menu Mingguan</h2>
-
-            <p>1 - 5 September 2026</p>
-
-
-            <!-- SENIN -->
-
-            <div class="menu-card">
-
-            <h3>Senin</h3>
-
-            <div id="mondayMenu">
-
-                <p> Nasi Putih</p>
-                <p> Ayam Kecap</p>
-                <p> Sayur Sop</p>
-                <p> Pisang</p>
-
-            </div>
-
-    <button
-        class="menu-button"
-        id="chooseMondayMenu">
-
-        📚 Pilih Menu
-
-    </button>
-
-</div>
-
-
-            <!-- SELASA -->
-
-            <div class="menu-card">
-
-                <h3>Selasa</h3>
-
-                <p> Nasi Putih</p>
-                <p> Ikan Goreng</p>
-                <p> Tumis Kangkung</p>
-                <p> Jeruk</p>
-
-            </div>
-
-
-            <!-- RABU -->
-
-            <div class="menu-card">
-
-                <h3>Rabu</h3>
-
-                <p> Nasi Putih</p>
-                <p> Telur Balado</p>
-                <p> Capcay</p>
-                <p> Semangka</p>
-
-            </div>
-
-
-            <!-- KAMIS -->
-
-            <div class="menu-card">
-
-                <h3>Kamis</h3>
-
-                <p> Nasi Putih</p>
-                <p> Ayam Suwir</p>
-                <p> Sayur Bening</p>
-                <p> Pisang</p>
-
-            </div>
-
-
-            <!-- JUMAT -->
-
-            <div class="menu-card">
-
-                <h3>Jumat</h3>
-
-                <p> Nasi Putih</p>
-                <p>Ikan Kuah</p>
-                <p> Tumis Wortel</p>
-                <p> Jeruk</p>
-
-            </div>
-
-
-            <button class="menu-button">
-                🔄 Salin Menu Minggu Lalu
-            </button>
-
-
-            <button
-                class="menu-button share-button"
-                id="shareMenuButton">
-
-                📤 Bagikan Menu
-
-            </button>
-
+          <div class="card">
+            <h3>🍱</h3>
+            <strong id="todayPortion">0</strong>
+            <p>Porsi Hari Ini</p>
+          </div>
         </section>
 
+        <section class="menu-today">
+          <h2>Menu Hari Ini</h2>
 
-       <!-- ================= SEKOLAH ================= -->
+          <div class="menu-card" id="todayMenu"></div>
+        </section>
 
-<section
-    id="schoolPage"
-    class="page"
-    style="display: none;">
+        <button class="menu-button" id="viewWeeklyMenuButton">
+          Lihat Menu Mingguan
+        </button>
+      </section>
 
-    <h2>🏫 Data Sekolah</h2>
+      <!-- ================= MENU MINGGUAN ================= -->
 
-    <p>Daftar sekolah yang dilayani</p>
+      <section id="menuPage" class="page" style="display: none">
+        <h2>📅 Menu Mingguan</h2>
 
-    <div id="schoolList">
+        <p id="weekDate"></p>
 
+        <!-- SENIN -->
         <div class="menu-card">
-            <p>⏳ Memuat data sekolah...</p>
+          <h3>Senin, <span id="dateSenin"></span></h3>
+
+          <div id="mondayMenu"></div>
+
+          <button class="menu-button edit-day-button" data-day="senin">
+            ✏️ Ubah Menu Senin
+          </button>
         </div>
 
-    </div>
+        <!-- SELASA -->
+        <div class="menu-card">
+          <h3>Selasa, <span id="dateSelasa"></span></h3>
 
-</section>
+          <div id="tuesdayMenu"></div>
 
-        <!-- ================= DATA SISWA ================= -->
+          <button class="menu-button edit-day-button" data-day="selasa">
+            ✏️ Ubah Menu Selasa
+          </button>
+        </div>
 
-<section id="studentPage" class="page" style="display: none;">
+        <!-- RABU -->
+        <div class="menu-card">
+          <h3>Rabu, <span id="dateRabu"></span></h3>
 
-    <button class="back-button" id="backToSchoolButton">
-        ← Kembali ke Sekolah
-    </button>
+          <div id="wednesdayMenu"></div>
 
-    <h2>👨‍🎓 Data Siswa</h2>
+          <button class="menu-button edit-day-button" data-day="rabu">
+            ✏️ Ubah Menu Rabu
+          </button>
+        </div>
 
-    <p id="selectedSchool">
-        SDN 01 Palu
-    </p>
+        <!-- KAMIS -->
+        <div class="menu-card">
+          <h3>Kamis, <span id="dateKamis"></span></h3>
 
-    <button class="menu-button" id="addStudentButton">
-        ➕ Tambah Siswa
-    </button>
+          <div id="thursdayMenu"></div>
 
-    <div id="studentList">
+          <button class="menu-button edit-day-button" data-day="kamis">
+            ✏️ Ubah Menu Kamis
+          </button>
+        </div>
 
-        <!-- Data siswa akan muncul di sini -->
+        <!-- JUMAT -->
+        <div class="menu-card">
+          <h3>Jumat, <span id="dateJumat"></span></h3>
 
-    </div>
+          <div id="fridayMenu"></div>
 
-</section>
+          <button class="menu-button edit-day-button" data-day="jumat">
+            ✏️ Ubah Menu Jumat
+          </button>
+        </div>
 
-        <!-- ================= PORSI ================= -->
+        <!-- SALIN MENU -->
 
-        <section
-            id="portionPage"
-            class="page"
-            style="display: none;">
+        <!-- BAGIKAN -->
+        <button class="menu-button share-button" id="shareMenuButton">
+          📤 Bagikan Menu
+        </button>
+      </section>
 
-            <h2>🍱 Kebutuhan Porsi</h2>
+      <!-- ================= SEKOLAH ================= -->
 
-            <p>Senin, 1 September 2026</p>
+      <section id="schoolPage" class="page" style="display: none">
+        <h2>🏫 Data Sekolah</h2>
 
+        <p>Daftar sekolah yang dilayani</p>
 
-            <div class="menu-card">
+        <div id="schoolList">
+          <div class="menu-card">
+            <p>⏳ Memuat data sekolah...</p>
+          </div>
+        </div>
+      </section>
 
-                <div class="portion-row">
-                    <span>🏫 SDN 01 Palu</span>
-                    <strong>150</strong>
-                </div>
+      <!-- ================= DATA SISWA ================= -->
 
-                <div class="portion-row">
-                    <span>🏫 SDN 02 Palu</span>
-                    <strong>200</strong>
-                </div>
-
-                <div class="portion-row">
-                    <span>🏫 SDN 03 Palu</span>
-                    <strong>175</strong>
-                </div>
-
-                <div class="portion-row">
-                    <span>🏫 SDN 04 Palu</span>
-                    <strong>125</strong>
-                </div>
-
-                <div class="portion-row">
-                    <span>🏫 SDN 05 Palu</span>
-                    <strong>200</strong>
-                </div>
-
-            </div>
-
-
-            <!-- TOTAL PORSI -->
-
-            <div class="total-portion">
-
-                <span>TOTAL PORSI</span>
-
-                <strong id="totalPortion">
-                    850
-                </strong>
-
-                <span>porsi</span>
-
-            </div>
-
-
-            <!-- RINGKASAN -->
-
-            <div class="menu-card">
-
-                <h3>📋 Ringkasan</h3>
-
-                <p>
-                    Total sekolah:
-                    <strong>5 sekolah</strong>
-                </p>
-
-                <p>
-                    Total kebutuhan:
-                    <strong id="summaryPortion">
-                        850 porsi
-                    </strong>
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= BANK MENU ================= -->
-
-<section id="bankMenuPage" class="page" style="display: none;">
-
-    <h2>📚 Bank Menu</h2>
-
-    <p>Kumpulan paket menu catering</p>
-
-
-    <!-- Tombol Tambah Menu -->
-
-    <button class="menu-button" id="addMenuButton">
-        ➕ Tambah Menu
-    </button>
-
-
-    <!-- Form Tambah Menu -->
-
-    <div id="menuForm" class="menu-form">
-
-        <h3>➕ Tambah Paket Menu</h3>
-
-
-        <label for="menuName">
-            Nama Paket Menu
-        </label>
-
-        <input
-            type="text"
-            id="menuName"
-            placeholder="Contoh: Ayam Kecap"
-        >
-
-
-        <label for="mainFood">
-            🍚 Makanan Pokok
-        </label>
-
-        <input
-            type="text"
-            id="mainFood"
-            placeholder="Contoh: Nasi Putih"
-        >
-
-
-        <label for="sideDish">
-            🍗 Lauk
-        </label>
-
-        <input
-            type="text"
-            id="sideDish"
-            placeholder="Contoh: Ayam Kecap"
-        >
-
-
-        <label for="vegetable">
-            🥬 Sayur
-        </label>
-
-        <input
-            type="text"
-            id="vegetable"
-            placeholder="Contoh: Sayur Sop"
-        >
-
-
-        <label for="fruit">
-            🍌 Buah
-        </label>
-
-        <input
-            type="text"
-            id="fruit"
-            placeholder="Contoh: Pisang"
-        >
-
-
-        <!-- Tombol Simpan -->
-
-        <button
-            class="menu-button"
-            id="saveMenuButton">
-
-            💾 Simpan Menu
-
+      <section id="studentPage" class="page" style="display: none">
+        <button class="back-button" id="backToSchoolButton">
+          ← Kembali ke Sekolah
         </button>
 
-    </div>
+        <h2>👨‍🎓 Data Siswa</h2>
 
+        <p id="selectedSchool">SDN 01 Palu</p>
 
-    <!-- Tempat menu yang sudah disimpan -->
+        <button class="menu-button" id="addStudentButton">
+          ➕ Tambah Siswa
+        </button>
 
-    <div id="menuList">
+        <div id="studentList">
+          <!-- Data siswa akan muncul di sini -->
+        </div>
+      </section>
 
-        <!-- Menu akan muncul di sini -->
+      <!-- ================= PORSI ================= -->
 
-    </div>
+      <section id="portionPage" class="page" style="display: none">
+        <h2>Kebutuhan Porsi</h2>
 
-</section>
+        <p>Pilih tanggal untuk mengatur jumlah porsi.</p>
 
+        <div class="menu-card">
+          <label for="portionDate"> Tanggal </label>
 
-        <!-- ================= LAINNYA ================= -->
+          <input type="date" id="portionDate" />
+        </div>
 
-        <section
-            id="morePage"
-            class="page"
-            style="display: none;">
+        <!-- MENU HARI INI -->
 
-            <h2>⋯ Lainnya</h2>
+        <div class="menu-card">
+          <h3>🍱 Menu Hari Ini</h3>
 
-            <p>
-                Fitur lainnya
-            </p>
+          <div id="portionTodayMenu">
+            <p>Memuat menu...</p>
+          </div>
+        </div>
 
+        <!-- DAFTAR CABANG -->
 
-            <div
-                class="menu-card more-item"
-                id="openBankMenu">
+        <div id="portionList">
+          <!-- Cabang akan muncul di sini -->
+        </div>
 
-                <h3>📚 Bank Menu</h3>
+        <!-- TOTAL -->
 
-                <p>
-                    Simpan dan pilih kembali
-                    paket menu catering.
-                </p>
+        <div class="total-portion">
+          <span>TOTAL PORSI</span>
 
-            </div>
+          <strong id="totalPortion"> 0 </strong>
 
-        </section>
+          <span>porsi</span>
+        </div>
 
+        <!-- SIMPAN -->
+
+        <button class="menu-button" id="savePortionButton">Simpan Porsi</button>
+
+        <!-- RINGKASAN -->
+
+        <div class="menu-card">
+          <h3>Ringkasan</h3>
+
+          <p>
+            Total cabang:
+            <strong id="portionSchoolCount">0</strong>
+          </p>
+
+          <p>
+            Total kebutuhan:
+            <strong>
+              <span id="summaryPortion">0</span>
+              porsi
+            </strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= BANK MENU ================= -->
+
+      <section id="bankMenuPage" class="page" style="display: none">
+        <h2>📚 Bank Menu</h2>
+
+        <p>Kumpulan paket menu catering</p>
+
+        <!-- Tombol Tambah Menu -->
+
+        <button class="menu-button" id="addMenuButton">➕ Tambah Menu</button>
+
+        <!-- Form Tambah Menu -->
+
+        <div id="menuForm" class="menu-form">
+          <h3>Tambah Paket Menu</h3>
+
+          <!-- Makanan Pokok -->
+          <label for="mainFood"> Makanan Pokok </label>
+
+          <input type="text" id="mainFood" placeholder="Contoh: Nasi Putih" />
+
+          <!-- Menu Utama -->
+          <label for="mainMenu"> Menu Utama </label>
+
+          <input type="text" id="mainMenu" placeholder="Contoh: Ayam Kecap" />
+
+          <!-- Lauk Tambahan -->
+          <label for="sideDish"> Lauk Tambahan </label>
+
+          <input type="text" id="sideDish" placeholder="Contoh: Telur" />
+
+          <!-- Sayur -->
+          <label for="vegetable"> Sayur </label>
+
+          <input type="text" id="vegetable" placeholder="Contoh: Sayur Sop" />
+
+          <!-- Buah -->
+          <label for="fruit"> Buah </label>
+
+          <input type="text" id="fruit" placeholder="Contoh: Pisang" />
+          <!-- Tombol Simpan -->
+
+          <button class="menu-button" id="saveMenuButton">
+            💾 Simpan Menu
+          </button>
+        </div>
+
+        <!-- Tempat menu yang sudah disimpan -->
+
+        <div id="menuList">
+          <!-- Menu akan muncul di sini -->
+        </div>
+      </section>
+
+      <!-- ================= LAINNYA ================= -->
+
+      <section id="morePage" class="page" style="display: none">
+        <h2>⋯ Lainnya</h2>
+
+        <p>Fitur lainnya</p>
+
+        <div class="menu-card more-item" id="openBankMenu">
+          <h3>📚 Bank Menu</h3>
+
+          <p>Simpan dan pilih kembali paket menu catering.</p>
+        </div>
+      </section>
     </main>
-
 
     <!-- ================= NAVIGASI ================= -->
 
     <nav class="bottom-nav">
+      <a href="#" class="nav-item active" data-page="home">
+        🏠
+        <span>Beranda</span>
+      </a>
 
-        <a
-            href="#"
-            class="nav-item active"
-            data-page="home">
+      <a href="#" class="nav-item" data-page="menu">
+        🍴
+        <span>Menu</span>
+      </a>
 
-            🏠
-            <span>Beranda</span>
+      <a href="#" class="nav-item" data-page="school">
+        🏫
+        <span>Sekolah</span>
+      </a>
 
-        </a>
+      <a href="#" class="nav-item" data-page="portion">
+        🍱
+        <span>Porsi</span>
+      </a>
 
-
-        <a
-            href="#"
-            class="nav-item"
-            data-page="menu">
-
-            🍴
-            <span>Menu</span>
-
-        </a>
-
-
-        <a
-            href="#"
-            class="nav-item"
-            data-page="school">
-
-            🏫
-            <span>Sekolah</span>
-
-        </a>
-
-
-        <a
-            href="#"
-            class="nav-item"
-            data-page="portion">
-
-            🍱
-            <span>Porsi</span>
-
-        </a>
-
-
-        <a
-            href="#"
-            class="nav-item"
-            data-page="more">
-
-            ⋯
-            <span>Lainnya</span>
-
-        </a>
-
+      <a href="#" class="nav-item" data-page="more">
+        ⋯
+        <span>Lainnya</span>
+      </a>
     </nav>
-
 
     <!-- ================= JAVASCRIPT ================= -->
 
-    <script src="script.js"></script>
-
-</body>
-
+    <script src="../js/script.js"></script>
+  </body>
 </html>
