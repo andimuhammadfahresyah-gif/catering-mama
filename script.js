@@ -477,7 +477,7 @@ if (backToSchoolButton) {
 // ==========================================
 
 const API_URL =
-  "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnT7PgC08n5cBtqv65W7W8_kLvYss6SF-aPLnN4DXO_-CER81kDurrMjp9ZvIuP7y5I1j1Gx2HDPTKAEh2ikRQCcKKoHkdLNUHq5FqLU5czR3Y4V7cjVN7WvGIje9ILzE5CShnpZIDQnDj7UoPbiTUeRO4kWCJy8dIFHXKJ0G58VOaeVePscaMHl-ZVPJeINKo725SDkG2ha47a53niXDbI0F3YYGJvo8jSi8AH1c_DVIq5t_hcLgxonSO45rQUnS-HqJ6VY8RMlt3rY8-3ZwkUZYqF1IA&lib=MpfeP9OlVDfvnS1Pe9smb_p8R-JNGvV-4";
+  "https://script.google.com/macros/s/AKfycbwG-K7ZZto2P2QzWn60HD8ESDJXTPsVqe-RRJW8XpRZ9xM7t1aBMAdBe2Gb3tkHN5if/exec";
 
 // ==========================================
 // AMBIL DATA SEKOLAH
