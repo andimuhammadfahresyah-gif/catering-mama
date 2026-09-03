@@ -815,10 +815,10 @@ if (shareMenuButton) {
 
     // Buka WhatsApp
     const whatsappURL =
-      "https://wa.me/?text=" +
-      encodeURIComponent(text);
+  "https://api.whatsapp.com/send?text=" +
+  encodeURIComponent(text);
 
-    window.open(whatsappURL, "_blank");
+window.location.href = whatsappURL;
 
   });
 
