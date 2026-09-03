@@ -477,7 +477,7 @@ if (backToSchoolButton) {
 // ==========================================
 
 const API_URL =
-  "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnSiB_ltrLqiakF-tGs4BwOSZ3ooJq94XPc90j1wUkUtl_F_nOp-vqyB30RzOTrQI3OyzMfMxGcexKdU_vnfidyKrMu3kW9wng3NnIcSv7ZZYLZ9jp3nFYexp-gw9Is7K9_n2zY4hnSbEbveK3AktEGJ33YzImg7RHHQ4sSRye6XVtpFzzUfZfD5P6a0aMeasG9vDTLjMPGM--h6KWl87k9iWGLpLIOdRCpoEK_DWwdAQ4d8MqDzjsxBLAovOEjU2U5kqvsRx90uzsaRLofRiA7o5ATF-A&lib=MpfeP9OlVDfvnS1Pe9smb_p8R-JNGvV-4";
+  "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnT7PgC08n5cBtqv65W7W8_kLvYss6SF-aPLnN4DXO_-CER81kDurrMjp9ZvIuP7y5I1j1Gx2HDPTKAEh2ikRQCcKKoHkdLNUHq5FqLU5czR3Y4V7cjVN7WvGIje9ILzE5CShnpZIDQnDj7UoPbiTUeRO4kWCJy8dIFHXKJ0G58VOaeVePscaMHl-ZVPJeINKo725SDkG2ha47a53niXDbI0F3YYGJvo8jSi8AH1c_DVIq5t_hcLgxonSO45rQUnS-HqJ6VY8RMlt3rY8-3ZwkUZYqF1IA&lib=MpfeP9OlVDfvnS1Pe9smb_p8R-JNGvV-4";
 
 // ==========================================
 // AMBIL DATA SEKOLAH
@@ -1659,7 +1659,6 @@ function simpanPorsi() {
 
   if (!tanggal) {
     alert("Pilih tanggal terlebih dahulu.");
-
     return;
   }
 
@@ -1667,7 +1666,6 @@ function simpanPorsi() {
 
   document.querySelectorAll(".portion-input").forEach(function (input) {
     const school = input.dataset.school;
-
     const jumlah = Number(input.value) || 0;
 
     dataPorsi[school] = jumlah;
@@ -1681,25 +1679,30 @@ function simpanPorsi() {
       data: dataPorsi,
     }),
   })
-    .then((response) => response.json())
-    .then((result) => {
+    .then((response) => response.text())
+    .then((text) => {
+      console.log("Respons dari server:", text);
+
+      let result;
+
+      try {
+        result = JSON.parse(text);
+      } catch (error) {
+        throw new Error("Respons server bukan JSON: " + text);
+      }
+
       if (result.success) {
         alert("Data porsi berhasil disimpan.");
         tampilkanPorsiHariIni();
       } else {
-        alert("Gagal menyimpan: " + result.message);
+        alert("Gagal menyimpan: " + (result.message || "Terjadi kesalahan."));
       }
     })
     .catch((error) => {
-      console.error(error);
+      console.error("Error simpan porsi:", error);
       alert("Terjadi kesalahan saat menyimpan data porsi.");
     });
-
-  alert("Data porsi berhasil disimpan.");
-
-  tampilkanPorsiHariIni();
 }
-
 // ==========================================
 // AMBIL DATA PORSI
 // ==========================================
