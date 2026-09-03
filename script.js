@@ -741,96 +741,131 @@ document.addEventListener("click", function (event) {
 // BAGIKAN MENU KE WHATSAPP
 // ==========================================
 
-const shareMenuButton = document.getElementById("shareMenuButton");
+const shareMenuButton =
+  document.getElementById("shareMenuButton");
 
 if (shareMenuButton) {
-  shareMenuButton.addEventListener("click", function () {
 
-    // Ambil tanggal Senin dan Jumat minggu ini
-    const dates = getWeekDates();
+  shareMenuButton.addEventListener(
+    "click",
+    function () {
 
-    // Format tanggal
-    function formatTanggal(tanggal) {
-      return tanggal.toLocaleDateString("id-ID", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      });
-    }
+      const dates = getWeekDates();
 
-    const tanggalAwal = formatTanggal(dates.monday);
-    const tanggalAkhir = formatTanggal(dates.friday);
-
-    // ======================================
-    // JUDUL PESAN
-    // ======================================
-
-    let text =
-      "🍱 MENU CATERING SEKOLAH\n\n" +
-      "📅 MENU MINGGUAN\n" +
-      tanggalAwal + " - " + tanggalAkhir + "\n\n";
-
-
-    // ======================================
-    // NAMA HARI
-    // ======================================
-
-    const dayNames = {
-      senin: "🍽️ SENIN",
-      selasa: "🍽️ SELASA",
-      rabu: "🍽️ RABU",
-      kamis: "🍽️ KAMIS",
-      jumat: "🍽️ JUMAT"
-    };
-
-
-    // ======================================
-    // MASUKKAN MENU
-    // ======================================
-
-    Object.keys(dayNames).forEach(function (day) {
-
-      text += dayNames[day] + "\n";
-
-      if (
-        weeklyMenu[day] &&
-        weeklyMenu[day].length > 0
-      ) {
-
-        weeklyMenu[day].forEach(function (food) {
-          text += "• " + food + "\n";
+      function formatTanggal(tanggal) {
+        return tanggal.toLocaleDateString("id-ID", {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
         });
-
-      } else {
-
-        text += "• Menu belum tersedia\n";
-
       }
 
-      text += "\n";
-    });
+      const tanggalAwal =
+        formatTanggal(dates.monday);
+
+      const tanggalAkhir =
+        formatTanggal(dates.friday);
 
 
-    // ======================================
-    // FOOTER
-    // ======================================
+      // Emoji dibuat melalui Unicode code point
+      const emojiMenu =
+        String.fromCodePoint(0x1F371);
 
-    text +=
-      "━━━━━━━━━━━━━━━━\n" +
-      "🍱 Catering Sekolah";
+      const emojiTanggal =
+        String.fromCodePoint(0x1F4C5);
+
+      const emojiMakan =
+        String.fromCodePoint(0x1F37D);
 
 
-    // ======================================
-    // BUKA WHATSAPP
-    // ======================================
+      let text =
+        emojiMenu +
+        " MENU CATERING SEKOLAH\n\n" +
 
-    const whatsappURL =
-      "https://wa.me/?text=" +
-      encodeURIComponent(text);
+        emojiTanggal +
+        " MENU MINGGUAN\n" +
 
-    window.open(whatsappURL, "_blank");
+        tanggalAwal +
+        " - " +
+        tanggalAkhir +
+        "\n\n";
 
-  });
+
+      const dayNames = {
+
+        senin:
+          emojiMakan + " SENIN",
+
+        selasa:
+          emojiMakan + " SELASA",
+
+        rabu:
+          emojiMakan + " RABU",
+
+        kamis:
+          emojiMakan + " KAMIS",
+
+        jumat:
+          emojiMakan + " JUMAT"
+
+      };
+
+
+      Object.keys(dayNames).forEach(
+        function (day) {
+
+          text +=
+            dayNames[day] + "\n";
+
+
+          if (
+            weeklyMenu[day] &&
+            weeklyMenu[day].length > 0
+          ) {
+
+            weeklyMenu[day].forEach(
+              function (food) {
+
+                text +=
+                  "• " +
+                  food +
+                  "\n";
+
+              }
+            );
+
+          } else {
+
+            text +=
+              "• Menu belum tersedia\n";
+
+          }
+
+          text += "\n";
+
+        }
+      );
+
+
+      text +=
+        "━━━━━━━━━━━━━━━━\n" +
+        emojiMenu +
+        " Catering Sekolah";
+
+
+      const whatsappURL =
+        "https://wa.me/?text=" +
+        encodeURIComponent(text);
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    }
+  );
+
 }
 
 // ==========================================
