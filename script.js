@@ -746,24 +746,56 @@ const shareMenuButton = document.getElementById("shareMenuButton");
 if (shareMenuButton) {
   shareMenuButton.addEventListener("click", function () {
 
+    // Ambil tanggal Senin dan Jumat minggu ini
+    const dates = getWeekDates();
+
+    // Format tanggal
+    function formatTanggal(tanggal) {
+      return tanggal.toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+    }
+
+    const tanggalAwal = formatTanggal(dates.monday);
+    const tanggalAkhir = formatTanggal(dates.friday);
+
+    // ======================================
+    // JUDUL PESAN
+    // ======================================
+
     let text =
-      "🍱 MENU CATERING MAMA\n\n" +
+      "🍱 MENU CATERING SEKOLAH\n\n" +
       "📅 MENU MINGGUAN\n" +
-      "1 - 5 September 2026\n\n";
+      tanggalAwal + " - " + tanggalAkhir + "\n\n";
+
+
+    // ======================================
+    // NAMA HARI
+    // ======================================
 
     const dayNames = {
-      senin: "🍗 SENIN",
-      selasa: "🐟 SELASA",
-      rabu: "🥚 RABU",
-      kamis: "🍗 KAMIS",
-      jumat: "🐟 JUMAT"
+      senin: "🍽️ SENIN",
+      selasa: "🍽️ SELASA",
+      rabu: "🍽️ RABU",
+      kamis: "🍽️ KAMIS",
+      jumat: "🍽️ JUMAT"
     };
+
+
+    // ======================================
+    // MASUKKAN MENU
+    // ======================================
 
     Object.keys(dayNames).forEach(function (day) {
 
       text += dayNames[day] + "\n";
 
-      if (weeklyMenu[day] && weeklyMenu[day].length > 0) {
+      if (
+        weeklyMenu[day] &&
+        weeklyMenu[day].length > 0
+      ) {
 
         weeklyMenu[day].forEach(function (food) {
           text += "• " + food + "\n";
@@ -778,16 +810,26 @@ if (shareMenuButton) {
       text += "\n";
     });
 
+
+    // ======================================
+    // FOOTER
+    // ======================================
+
     text +=
       "━━━━━━━━━━━━━━━━\n" +
-      "🍱 Catering Mama";
+      "🍱 Catering Sekolah";
 
-    // Buka WhatsApp
+
+    // ======================================
+    // BUKA WHATSAPP
+    // ======================================
+
     const whatsappURL =
       "https://wa.me/?text=" +
       encodeURIComponent(text);
 
     window.open(whatsappURL, "_blank");
+
   });
 }
 
