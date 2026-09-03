@@ -767,24 +767,13 @@ if (shareMenuButton) {
         formatTanggal(dates.friday);
 
 
-      // Emoji dibuat melalui Unicode code point
-      const emojiMenu =
-        String.fromCodePoint(0x1F371);
-
-      const emojiTanggal =
-        String.fromCodePoint(0x1F4C5);
-
-      const emojiMakan =
-        String.fromCodePoint(0x1F37D);
-
+      // ======================================
+      // BUAT TEKS TANPA EMOJI DAHULU
+      // ======================================
 
       let text =
-        emojiMenu +
-        " MENU CATERING SEKOLAH\n\n" +
-
-        emojiTanggal +
-        " MENU MINGGUAN\n" +
-
+        "__MENU__ MENU CATERING SEKOLAH\n\n" +
+        "__TANGGAL__ MENU MINGGUAN\n" +
         tanggalAwal +
         " - " +
         tanggalAkhir +
@@ -792,22 +781,11 @@ if (shareMenuButton) {
 
 
       const dayNames = {
-
-        senin:
-          emojiMakan + " SENIN",
-
-        selasa:
-          emojiMakan + " SELASA",
-
-        rabu:
-          emojiMakan + " RABU",
-
-        kamis:
-          emojiMakan + " KAMIS",
-
-        jumat:
-          emojiMakan + " JUMAT"
-
+        senin: "__MAKAN__ SENIN",
+        selasa: "__MAKAN__ SELASA",
+        rabu: "__MAKAN__ RABU",
+        kamis: "__MAKAN__ KAMIS",
+        jumat: "__MAKAN__ JUMAT"
       };
 
 
@@ -849,14 +827,50 @@ if (shareMenuButton) {
 
       text +=
         "━━━━━━━━━━━━━━━━\n" +
-        emojiMenu +
-        " Catering Sekolah";
+        "__MENU__ Catering Sekolah";
 
+
+      // ======================================
+      // ENCODE TEKS
+      // ======================================
+
+      let encodedText =
+        encodeURIComponent(text);
+
+
+      // ======================================
+      // GANTI PLACEHOLDER DENGAN EMOJI
+      // ======================================
+
+      // 🍱
+      encodedText =
+        encodedText.replace(
+          /__MENU__/g,
+          "%F0%9F%8D%B1"
+        );
+
+      // 📅
+      encodedText =
+        encodedText.replace(
+          /__TANGGAL__/g,
+          "%F0%9F%93%85"
+        );
+
+      // 🍽️
+      encodedText =
+        encodedText.replace(
+          /__MAKAN__/g,
+          "%F0%9F%8D%BD%EF%B8%8F"
+        );
+
+
+      // ======================================
+      // BUKA WHATSAPP
+      // ======================================
 
       const whatsappURL =
         "https://wa.me/?text=" +
-        encodeURIComponent(text);
-
+        encodedText;
 
       window.open(
         whatsappURL,
