@@ -103,80 +103,6 @@ if (openBankMenu) {
 }
 
 // ==========================================
-// BAGIKAN MENU
-// ==========================================
-
-const shareMenuButton = document.getElementById("shareMenuButton");
-
-if (shareMenuButton) {
-  shareMenuButton.addEventListener("click", async function () {
-    const menuText = `
-🍱 MENU CATERING SEKOLAH
-📅 1 - 5 September 2026
-
-━━━━━━━━━━━━━━━━
-
-🍗 SENIN
-🍚 Nasi Putih
-🍗 Ayam Kecap
-🥬 Sayur Sop
-🍌 Pisang
-
-🐟 SELASA
-🍚 Nasi Putih
-🐟 Ikan Goreng
-🥬 Tumis Kangkung
-🍊 Jeruk
-
-🥚 RABU
-🍚 Nasi Putih
-🥚 Telur Balado
-🥬 Capcay
-🍉 Semangka
-
-🍗 KAMIS
-🍚 Nasi Putih
-🍗 Ayam Suwir
-🥬 Sayur Bening
-🍌 Pisang
-
-🐟 JUMAT
-🍚 Nasi Putih
-🐟 Ikan Kuah
-🥬 Tumis Wortel
-🍊 Jeruk
-
-━━━━━━━━━━━━━━━━
-
-🍱 Catering Mama
-        `;
-
-    // Jika browser mendukung fitur Share
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Menu Catering Sekolah",
-          text: menuText,
-        });
-      } catch (error) {
-        console.log("Berbagi dibatalkan.");
-      }
-    }
-
-    // Jika browser tidak mendukung Share
-    else {
-      try {
-        await navigator.clipboard.writeText(menuText);
-
-        alert("✅ Menu berhasil disalin!");
-      } catch (error) {
-        alert("❌ Tidak dapat menyalin menu.");
-      }
-    }
-  });
-}
-
-// ==========================================
 // TOMBOL TAMBAH SEKOLAH
 // ==========================================
 
@@ -812,54 +738,56 @@ document.addEventListener("click", function (event) {
 });
 
 // ==========================================
-// BAGIKAN MENU
+// BAGIKAN MENU KE WHATSAPP
 // ==========================================
 
-const shareButton = document.getElementById("shareMenuButton");
+const shareMenuButton = document.getElementById("shareMenuButton");
 
-if (shareButton) {
-  shareButton.addEventListener("click", async function () {
+if (shareMenuButton) {
+  shareMenuButton.addEventListener("click", function () {
+
     let text =
-      "MENU CATERING MAMA\n\n" + "Menu Mingguan\n" + "1 - 5 September 2026\n\n";
+      "🍱 MENU CATERING MAMA\n\n" +
+      "📅 MENU MINGGUAN\n" +
+      "1 - 5 September 2026\n\n";
 
     const dayNames = {
-      senin: "SENIN",
-      selasa: "SELASA",
-      rabu: "RABU",
-      kamis: "KAMIS",
-      jumat: "JUMAT",
+      senin: "🍗 SENIN",
+      selasa: "🐟 SELASA",
+      rabu: "🥚 RABU",
+      kamis: "🍗 KAMIS",
+      jumat: "🐟 JUMAT"
     };
 
     Object.keys(dayNames).forEach(function (day) {
+
       text += dayNames[day] + "\n";
 
-      weeklyMenu[day].forEach(function (food) {
-        text += "- " + food + "\n";
-      });
+      if (weeklyMenu[day] && weeklyMenu[day].length > 0) {
+
+        weeklyMenu[day].forEach(function (food) {
+          text += "• " + food + "\n";
+        });
+
+      } else {
+
+        text += "• Menu belum tersedia\n";
+
+      }
 
       text += "\n";
     });
 
-    text += "Catering Mama";
+    text +=
+      "━━━━━━━━━━━━━━━━\n" +
+      "🍱 Catering Mama";
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Menu Catering Mama",
-          text: text,
-        });
-      } catch (error) {
-        console.log("Berbagi dibatalkan.");
-      }
-    } else {
-      try {
-        await navigator.clipboard.writeText(text);
+    // Buka WhatsApp
+    const whatsappURL =
+      "https://wa.me/?text=" +
+      encodeURIComponent(text);
 
-        alert("Menu berhasil disalin.");
-      } catch (error) {
-        alert("Tidak dapat menyalin menu.");
-      }
-    }
+    window.open(whatsappURL, "_blank");
   });
 }
 
