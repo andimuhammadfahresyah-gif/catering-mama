@@ -6,7 +6,7 @@
 
     <title>Catering Mama</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
@@ -220,68 +220,59 @@
 
       <!-- ================= BANK MENU ================= -->
 
-<section id="bankMenuPage" class="page" style="display: none">
+      <section id="bankMenuPage" class="page" style="display: none">
+        <h2>📚 Bank Menu</h2>
 
-  <h2>📚 Bank Menu</h2>
+        <p>Pilih menu dari daftar yang tersedia</p>
 
-  <p>Pilih menu dari daftar yang tersedia</p>
+        <!-- MAKANAN POKOK -->
+        <div class="menu-card">
+          <h3>🍚 Makanan Pokok</h3>
 
-  <!-- MAKANAN POKOK -->
-  <div class="menu-card">
-    <h3>🍚 Makanan Pokok</h3>
+          <div class="selected-menu">Nasi Putih</div>
+        </div>
 
-    <div class="selected-menu">
-      Nasi Putih
-    </div>
-  </div>
+        <!-- MENU UTAMA -->
+        <div class="menu-card">
+          <h3>🍗 Menu Utama</h3>
 
+          <select id="bankMenuUtama">
+            <option value="">Pilih Menu Utama</option>
+          </select>
+        </div>
 
-  <!-- MENU UTAMA -->
-  <div class="menu-card">
-    <h3>🍗 Menu Utama</h3>
+        <!-- LAUK TAMBAHAN -->
+        <div class="menu-card">
+          <h3>🍳 Lauk Tambahan</h3>
 
-    <select id="bankMenuUtama">
-      <option value="">Pilih Menu Utama</option>
-    </select>
-  </div>
+          <select id="bankLaukTambahan">
+            <option value="">Pilih Lauk Tambahan</option>
+          </select>
+        </div>
 
+        <!-- SAYUR -->
+        <div class="menu-card">
+          <h3>🥬 Sayur</h3>
 
-  <!-- LAUK TAMBAHAN -->
-  <div class="menu-card">
-    <h3>🍳 Lauk Tambahan</h3>
+          <select id="bankSayur">
+            <option value="">Pilih Sayur</option>
+          </select>
+        </div>
 
-    <select id="bankLaukTambahan">
-      <option value="">Pilih Lauk Tambahan</option>
-    </select>
-  </div>
+        <!-- BUAH -->
+        <div class="menu-card">
+          <h3>🍌 Buah</h3>
 
+          <select id="bankBuah">
+            <option value="">Pilih Buah</option>
+          </select>
+        </div>
 
-  <!-- SAYUR -->
-  <div class="menu-card">
-    <h3>🥬 Sayur</h3>
-
-    <select id="bankSayur">
-      <option value="">Pilih Sayur</option>
-    </select>
-  </div>
-
-
-  <!-- BUAH -->
-  <div class="menu-card">
-    <h3>🍌 Buah</h3>
-
-    <select id="bankBuah">
-      <option value="">Pilih Buah</option>
-    </select>
-  </div>
-
-
-  <!-- SIMPAN -->
-  <button class="menu-button" id="saveBankMenuButton">
-    💾 Simpan Menu
-  </button>
-
-</section>
+        <!-- SIMPAN -->
+        <button class="menu-button" id="saveBankMenuButton">
+          💾 Simpan Menu
+        </button>
+      </section>
 
       <!-- ================= LAINNYA ================= -->
 
@@ -328,7 +319,6 @@
     </nav>
 
     <!-- ================= JAVASCRIPT ================= -->
-
     <script src="js/script.js"></script>
   </body>
 </html>
