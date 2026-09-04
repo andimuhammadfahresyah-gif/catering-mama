@@ -3037,6 +3037,8 @@ main {
 
     height: 72px !important;
 
+    transform: none !important;
+
     display: flex !important;
     align-items: center;
     justify-content: space-around;
