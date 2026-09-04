@@ -3302,3 +3302,30 @@ nav {
     box-sizing: border-box !important;
   }
 }
+
+/* =========================================
+   UKURAN HALAMAN HP
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* BERANDA */
+  #homePage {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* HALAMAN LAIN */
+  #menuPage,
+  #schoolPage,
+  #studentPage,
+  #portionPage,
+  #bankMenuPage,
+  #morePage {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+}
