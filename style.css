@@ -879,3 +879,2319 @@ main {
   color: #777;
   font-size: 14px;
 }
+
+/* =====================================================
+   BANK MENU - DESAIN MODERN CATERING MAMA
+   ===================================================== */
+
+#bankMenuPage {
+  min-height: 100vh;
+  padding: 24px 16px 110px;
+  background: linear-gradient(180deg, #eef8f1 0%, #ffffff 38%);
+  box-sizing: border-box;
+}
+
+/* Judul */
+#bankMenuPage h2 {
+  margin: 0;
+  color: #174d38;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+#bankMenuPage > p {
+  margin: 8px 0 24px;
+  color: #60756b;
+  font-size: 15px;
+}
+
+/* Semua card menu */
+#bankMenuPage .menu-card {
+  position: relative;
+  margin-bottom: 16px;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e4eee8;
+  box-shadow: 0 8px 24px rgba(30, 80, 55, 0.08);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Garis dekorasi */
+#bankMenuPage .menu-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: #238653;
+}
+
+/* Judul kategori */
+#bankMenuPage .menu-card h3 {
+  margin: 0 0 14px;
+  color: #174d38;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+/* Nasi Putih */
+#bankMenuPage .selected-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 17px;
+  border-radius: 16px;
+  background: #edf7ef;
+  color: #174d38;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+#bankMenuPage .selected-menu::after {
+  content: "✓";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #238653;
+  color: white;
+  font-size: 15px;
+}
+
+/* Dropdown */
+#bankMenuPage select {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 44px 0 16px;
+  border: 1px solid #dbe7df;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #263b32;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #174d38 50%),
+    linear-gradient(135deg, #174d38 50%, transparent 50%);
+  background-position:
+    calc(100% - 21px) 22px,
+    calc(100% - 15px) 22px;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Saat dropdown dipilih */
+#bankMenuPage select:focus {
+  border-color: #238653;
+  box-shadow: 0 0 0 4px rgba(35, 134, 83, 0.12);
+}
+
+/* Tombol simpan */
+#bankMenuPage #saveBankMenuButton {
+  width: 100%;
+  min-height: 58px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #176b46, #238653);
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  box-shadow: 0 10px 22px rgba(23, 107, 70, 0.25);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#bankMenuPage #saveBankMenuButton:active {
+  transform: scale(0.97);
+  box-shadow: 0 5px 12px rgba(23, 107, 70, 0.18);
+}
+
+/* Tambahan teks kecil */
+#bankMenuPage #saveBankMenuButton::after {
+  content: "";
+}
+
+/* =====================================================
+   WARNA TIAP KATEGORI
+   ===================================================== */
+
+/* Makanan Pokok */
+#bankMenuPage .menu-card:nth-of-type(1) {
+  background: linear-gradient(135deg, #ffffff, #f1f8f2);
+}
+
+/* Menu Utama */
+#bankMenuPage .menu-card:nth-of-type(2) {
+  background: linear-gradient(135deg, #fff7f3, #ffffff);
+}
+
+#bankMenuPage .menu-card:nth-of-type(2)::before {
+  background: #e87945;
+}
+
+/* Lauk Tambahan */
+#bankMenuPage .menu-card:nth-of-type(3) {
+  background: linear-gradient(135deg, #fffaf0, #ffffff);
+}
+
+#bankMenuPage .menu-card:nth-of-type(3)::before {
+  background: #e6a62d;
+}
+
+/* Sayur */
+#bankMenuPage .menu-card:nth-of-type(4) {
+  background: linear-gradient(135deg, #f2faef, #ffffff);
+}
+
+#bankMenuPage .menu-card:nth-of-type(4)::before {
+  background: #54a83e;
+}
+
+/* Buah */
+#bankMenuPage .menu-card:nth-of-type(5) {
+  background: linear-gradient(135deg, #fff8df, #ffffff);
+}
+
+#bankMenuPage .menu-card:nth-of-type(5)::before {
+  background: #e9b52d;
+}
+
+/* =====================================================
+   HP
+   ===================================================== */
+
+@media (max-width: 600px) {
+  #bankMenuPage {
+    padding: 20px 14px 100px;
+  }
+
+  #bankMenuPage h2 {
+    font-size: 27px;
+  }
+
+  #bankMenuPage .menu-card {
+    padding: 17px;
+    border-radius: 21px;
+  }
+
+  #bankMenuPage .menu-card h3 {
+    font-size: 18px;
+  }
+
+  #bankMenuPage select {
+    min-height: 50px;
+    font-size: 15px;
+  }
+
+  #bankMenuPage #saveBankMenuButton {
+    min-height: 56px;
+  }
+}
+
+/* =========================================================
+   CATERING MAMA - BERANDA MODERN
+   ========================================================= */
+
+#homePage {
+  min-height: 100vh;
+  padding: 24px 16px 110px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(102, 170, 126, 0.12), transparent 25%),
+    radial-gradient(circle at 90% 30%, rgba(224, 181, 91, 0.10), transparent 25%),
+    linear-gradient(180deg, #f2faf4 0%, #ffffff 45%, #f7fbf8 100%);
+  color: #163f31;
+}
+
+/* =========================================================
+   JUDUL BERANDA
+   ========================================================= */
+
+#homePage h1 {
+  margin: 0;
+  color: #11543d;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+#homePage h2 {
+  margin: 22px 0 4px;
+  color: #124c38;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+#homePage h3 {
+  color: #17533f;
+  font-weight: 800;
+}
+
+#homePage > p {
+  color: #62766d;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   TANGGAL
+   ========================================================= */
+
+#homeDate {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 6px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #e5f2e9;
+  color: #38715a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   KARTU RINGKASAN
+   ========================================================= */
+
+#homePage .summary-card,
+#homePage .stat-card,
+#homePage .dashboard-card {
+  border: 1px solid rgba(31, 103, 70, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 28px rgba(28, 79, 55, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#homePage .summary-card:hover,
+#homePage .stat-card:hover,
+#homePage .dashboard-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(28, 79, 55, 0.12);
+}
+
+/* Angka sekolah & porsi */
+
+#homePage #totalSchools,
+#homePage #todayPortion {
+  color: #15563f;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   MENU HARI INI
+   ========================================================= */
+
+#homePage #todayMenu {
+  margin-top: 12px;
+  padding: 8px;
+  border-radius: 26px;
+  background: #ffffff;
+  border: 1px solid #e6eee9;
+  box-shadow: 0 10px 28px rgba(28, 79, 55, 0.07);
+  overflow: hidden;
+}
+
+#homePage #todayMenu p {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 55px;
+  margin: 0;
+  padding: 10px 18px 10px 54px;
+  box-sizing: border-box;
+
+  color: #21483a;
+  font-size: 16px;
+  font-weight: 650;
+
+  border-bottom: 1px solid #edf2ee;
+}
+
+#homePage #todayMenu p:last-child {
+  border-bottom: none;
+}
+
+#homePage #todayMenu p::before {
+  content: "🍽";
+  position: absolute;
+  left: 17px;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #eaf5ed;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   TOMBOL LIHAT MENU MINGGUAN
+   ========================================================= */
+
+#homePage #viewWeeklyMenuButton {
+  width: 100%;
+  min-height: 58px;
+  margin-top: 18px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #126044,
+    #23885d
+  );
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  letter-spacing: 0.1px;
+
+  box-shadow:
+    0 10px 24px rgba(18, 96, 68, 0.23);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+#homePage #viewWeeklyMenuButton:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 28px rgba(18, 96, 68, 0.28);
+}
+
+#homePage #viewWeeklyMenuButton:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   EFEK PEMBUKAAN KONTEN
+   ========================================================= */
+
+#homePage > * {
+  animation: homeFadeIn 0.45s ease both;
+}
+
+@keyframes homeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   HIASAN LATAR
+   ========================================================= */
+
+#homePage::before {
+  content: "";
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -80px;
+  top: 130px;
+
+  border-radius: 50%;
+
+  background: rgba(92, 158, 112, 0.08);
+
+  pointer-events: none;
+}
+
+#homePage::after {
+  content: "🌿";
+
+  position: absolute;
+
+  left: -10px;
+  top: 260px;
+
+  font-size: 58px;
+
+  opacity: 0.12;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   RESPONSIVE HP
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #homePage {
+    padding: 18px 13px 105px;
+  }
+
+  #homePage h1 {
+    font-size: 26px;
+  }
+
+  #homePage h2 {
+    font-size: 24px;
+  }
+
+  #homeDate {
+    font-size: 13px;
+  }
+
+  #homePage #totalSchools,
+  #homePage #todayPortion {
+    font-size: 30px;
+  }
+
+  #homePage #todayMenu {
+    border-radius: 22px;
+  }
+
+  #homePage #todayMenu p {
+    min-height: 52px;
+    font-size: 15px;
+  }
+
+  #homePage #viewWeeklyMenuButton {
+    min-height: 55px;
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   MENU MINGGUAN - MODERN CATERING MAMA
+   ========================================================= */
+
+#menuPage {
+  min-height: 100vh;
+  padding: 22px 14px 110px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(70, 145, 95, 0.10),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      #f1f9f3 0%,
+      #ffffff 35%,
+      #f8fbf9 100%
+    );
+
+  color: #163f31;
+}
+
+/* ================================
+   JUDUL
+   ================================ */
+
+#menuPage h2 {
+  margin: 0;
+  color: #11543d;
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+#menuPage > p {
+  margin: 7px 0 22px;
+  color: #6a7c73;
+  font-size: 14px;
+}
+
+/* ================================
+   CARD HARI
+   ================================ */
+
+#menuPage .menu-card {
+  position: relative;
+
+  margin-bottom: 18px;
+  padding: 20px 18px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid #e5eee8;
+
+  box-shadow:
+    0 8px 25px rgba(31, 78, 56, 0.08);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#menuPage .menu-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 13px 30px rgba(31, 78, 56, 0.12);
+}
+
+/* Garis warna di kiri */
+
+#menuPage .menu-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 5px;
+
+  background: #238653;
+}
+
+/* ================================
+   NAMA HARI
+   ================================ */
+
+#menuPage .menu-card h3 {
+  margin: 0 0 15px;
+
+  color: #154d39;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+/* ================================
+   DAFTAR MAKANAN
+   ================================ */
+
+#menuPage .menu-card p {
+  display: flex;
+  align-items: center;
+
+  min-height: 40px;
+
+  margin: 0;
+
+  padding: 5px 8px;
+
+  color: #38564a;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  border-bottom: 1px solid #edf2ee;
+}
+
+#menuPage .menu-card p:last-of-type {
+  border-bottom: none;
+}
+
+/* Nomor/ikon kecil */
+
+#menuPage .menu-card p::before {
+  content: "🍽";
+
+  width: 30px;
+  height: 30px;
+
+  margin-right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf7ef;
+
+  font-size: 14px;
+}
+
+/* ================================
+   TOMBOL UBAH MENU
+   ================================ */
+
+#menuPage .edit-day-button {
+  width: 100%;
+
+  min-height: 50px;
+
+  margin-top: 15px;
+
+  border: none;
+  border-radius: 15px;
+
+  background: #e6f3ea;
+
+  color: #176243;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+#menuPage .edit-day-button:hover {
+  background: #d9eddf;
+}
+
+#menuPage .edit-day-button:active {
+  transform: scale(0.97);
+}
+
+/* ================================
+   VARIASI WARNA CARD
+   ================================ */
+
+/* Senin */
+
+#menuPage .menu-card:nth-of-type(1)::before {
+  background: #238653;
+}
+
+/* Selasa */
+
+#menuPage .menu-card:nth-of-type(2)::before {
+  background: #e59b32;
+}
+
+/* Rabu */
+
+#menuPage .menu-card:nth-of-type(3)::before {
+  background: #4c9c68;
+}
+
+/* Kamis */
+
+#menuPage .menu-card:nth-of-type(4)::before {
+  background: #e4774c;
+}
+
+/* Jumat */
+
+#menuPage .menu-card:nth-of-type(5)::before {
+  background: #d3a52c;
+}
+
+/* ================================
+   MENU KOSONG
+   ================================ */
+
+#menuPage .empty-menu {
+  padding: 18px;
+
+  text-align: center;
+
+  border-radius: 16px;
+
+  background: #f6faf7;
+
+  color: #73857c;
+
+  font-size: 14px;
+}
+
+/* ================================
+   RESPONSIVE HP
+   ================================ */
+
+@media (max-width: 600px) {
+
+  #menuPage {
+    padding: 18px 13px 105px;
+  }
+
+  #menuPage h2 {
+    font-size: 26px;
+  }
+
+  #menuPage .menu-card {
+    padding: 18px 16px;
+    border-radius: 21px;
+  }
+
+  #menuPage .menu-card h3 {
+    font-size: 18px;
+  }
+
+  #menuPage .menu-card p {
+    font-size: 14px;
+  }
+
+  #menuPage .edit-day-button {
+    min-height: 48px;
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   DATA SEKOLAH - MODERN & RAPI
+   ========================================================= */
+
+#schoolPage {
+  min-height: 100vh;
+  padding: 22px 14px 110px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(76, 150, 101, 0.10),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #f2faf4 0%,
+      #ffffff 38%,
+      #f8fbf9 100%
+    );
+
+  color: #183f32;
+}
+
+/* Judul halaman */
+
+#schoolPage h2 {
+  margin: 0;
+
+  color: #11543d;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+#schoolPage > p {
+  margin: 7px 0 24px;
+
+  color: #718179;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CARD SEKOLAH
+   ========================================================= */
+
+#schoolPage .school-card {
+  position: relative;
+
+  margin-bottom: 16px;
+  padding: 20px;
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #e4eee8;
+
+  box-shadow:
+    0 8px 24px rgba(31, 78, 56, 0.08);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#schoolPage .school-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 13px 30px rgba(31, 78, 56, 0.12);
+}
+
+/* Garis hijau di samping */
+
+#schoolPage .school-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 5px;
+
+  background: #238653;
+}
+
+/* =========================================================
+   NAMA SEKOLAH
+   ========================================================= */
+
+#schoolPage .school-card h3 {
+  margin: 0 0 12px;
+
+  color: #173f32;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   INFORMASI SEKOLAH
+   ========================================================= */
+
+#schoolPage .school-card p {
+  margin: 6px 0;
+
+  color: #63766d;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   STATUS CATERING
+   ========================================================= */
+
+#schoolPage .school-card p:nth-of-type(2) {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 8px;
+  padding: 6px 11px;
+
+  border-radius: 999px;
+
+  background: #e8f6ec;
+
+  color: #197044;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   TOMBOL LIHAT SISWA
+   ========================================================= */
+
+#schoolPage .school-card button {
+  width: 100%;
+
+  min-height: 48px;
+
+  margin-top: 15px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #176b46,
+    #238653
+  );
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 16px rgba(23, 107, 70, 0.18);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+#schoolPage .school-card button:hover {
+  box-shadow:
+    0 10px 20px rgba(23, 107, 70, 0.24);
+}
+
+#schoolPage .school-card button:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   JIKA CARD MENGGUNAKAN CLASS LAIN
+   ========================================================= */
+
+#schoolPage .card {
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4eee8;
+
+  box-shadow:
+    0 8px 24px rgba(31, 78, 56, 0.08);
+}
+
+/* =========================================================
+   RESPONSIVE HP
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #schoolPage {
+    padding: 18px 13px 105px;
+  }
+
+  #schoolPage h2 {
+    font-size: 25px;
+  }
+
+  #schoolPage .school-card {
+    padding: 18px;
+
+    border-radius: 20px;
+  }
+
+  #schoolPage .school-card h3 {
+    font-size: 16px;
+  }
+
+  #schoolPage .school-card p {
+    font-size: 13px;
+  }
+
+  #schoolPage .school-card button {
+    min-height: 47px;
+
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   HALAMAN PORSI - CATERING MAMA
+   ========================================================= */
+
+#portionPage {
+  min-height: 100vh;
+  padding: 22px 14px 110px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 90% 8%,
+      rgba(75, 150, 100, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #f1f9f3 0%,
+      #ffffff 38%,
+      #f8fbf9 100%
+    );
+
+  color: #183f32;
+}
+
+/* ===============================
+   JUDUL
+   =============================== */
+
+#portionPage h2 {
+  margin: 0;
+
+  color: #11543d;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+#portionPage > p {
+  margin: 7px 0 22px;
+
+  color: #6d7e76;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===============================
+   SEMUA CARD
+   =============================== */
+
+#portionPage .menu-card {
+  margin-bottom: 18px;
+  padding: 20px;
+
+  border: 1px solid #e3eee7;
+  border-radius: 23px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 8px 25px rgba(28, 79, 55, 0.08);
+
+  box-sizing: border-box;
+}
+
+/* ===============================
+   LABEL TANGGAL
+   =============================== */
+
+#portionPage label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #174d39;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* ===============================
+   INPUT TANGGAL
+   =============================== */
+
+#portionPage #portionDate {
+  width: 100%;
+  height: 54px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d8e7de;
+  border-radius: 16px;
+
+  background: #f7fbf8;
+
+  color: #173f32;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  outline: none;
+}
+
+#portionPage #portionDate:focus {
+  border-color: #238653;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 4px rgba(35, 134, 83, 0.10);
+}
+
+/* ===============================
+   MENU HARI INI
+   =============================== */
+
+#portionPage .menu-card h3 {
+  margin: 0 0 16px;
+
+  color: #154d39;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* ===============================
+   DAFTAR MENU
+   =============================== */
+
+#portionPage #portionTodayMenu {
+  padding: 5px 10px;
+
+  border-radius: 18px;
+
+  background: #f5faf6;
+}
+
+#portionPage #portionTodayMenu p {
+  display: flex;
+  align-items: center;
+
+  min-height: 45px;
+
+  margin: 0;
+
+  padding: 7px 5px;
+
+  border-bottom: 1px solid #e5eee8;
+
+  color: #38564a;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#portionPage #portionTodayMenu p:last-child {
+  border-bottom: none;
+}
+
+#portionPage #portionTodayMenu p::before {
+  content: "🍽️";
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  margin-right: 10px;
+
+  border-radius: 50%;
+
+  background: #e5f3e9;
+
+  font-size: 14px;
+}
+
+/* ===============================
+   INPUT JUMLAH PORSI
+   =============================== */
+
+#portionPage input[type="number"] {
+  width: 100%;
+  min-height: 50px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d8e7de;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  color: #174d39;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  outline: none;
+}
+
+#portionPage input[type="number"]:focus {
+  border-color: #238653;
+
+  box-shadow:
+    0 0 0 4px rgba(35, 134, 83, 0.10);
+}
+
+/* ===============================
+   TOMBOL
+   =============================== */
+
+#portionPage button {
+  border-radius: 14px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+#portionPage button:active {
+  transform: scale(0.97);
+}
+
+/* Tombol hijau */
+
+#portionPage .menu-button {
+  min-height: 48px;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #176b46,
+      #238653
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 16px rgba(23, 107, 70, 0.18);
+}
+
+/* ===============================
+   CATATAN SISWA
+   =============================== */
+
+#portionPage textarea {
+  width: 100%;
+
+  min-height: 100px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dce9e1;
+  border-radius: 16px;
+
+  background: #fafcfb;
+
+  color: #29483c;
+
+  font-size: 15px;
+
+  resize: vertical;
+
+  outline: none;
+}
+
+#portionPage textarea:focus {
+  border-color: #238653;
+
+  box-shadow:
+    0 0 0 4px rgba(35, 134, 83, 0.10);
+}
+
+/* ===============================
+   MOBILE
+   =============================== */
+
+@media (max-width: 600px) {
+
+  #portionPage {
+    padding: 18px 13px 105px;
+  }
+
+  #portionPage h2 {
+    font-size: 25px;
+  }
+
+  #portionPage .menu-card {
+    padding: 17px;
+
+    border-radius: 20px;
+  }
+
+  #portionPage .menu-card h3 {
+    font-size: 18px;
+  }
+
+  #portionPage #portionTodayMenu p {
+    font-size: 14px;
+  }
+
+  #portionPage #portionDate {
+    height: 51px;
+
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   DATA SEKOLAH - PERBAIKAN TAMPILAN
+   ========================================================= */
+
+#schoolPage {
+  padding: 24px 14px 110px;
+  background: #f5faf6;
+}
+
+/* Judul */
+#schoolPage h2 {
+  margin: 0 0 6px;
+  color: #174d39;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+#schoolPage > p {
+  margin: 0 0 22px;
+  color: #718078;
+  font-size: 14px;
+}
+
+/* CARD SEKOLAH */
+#schoolPage .menu-card {
+  position: relative;
+
+  margin: 0 0 16px;
+  padding: 20px 18px 18px 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4eee8;
+  border-radius: 22px;
+
+  box-shadow: 0 7px 20px rgba(30, 75, 52, 0.08);
+
+  overflow: hidden;
+}
+
+/* garis hijau kiri */
+#schoolPage .menu-card::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 5px;
+
+  background: #238653;
+}
+
+/* NAMA SEKOLAH */
+#schoolPage .menu-card h3 {
+  margin: 0 0 13px;
+
+  color: #193f33;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+/* INFORMASI */
+#schoolPage .menu-card p {
+  margin: 7px 0;
+
+  color: #64766e;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* STATUS AKTIF */
+#schoolPage .menu-card p:last-of-type {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 9px;
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: #e8f6ec;
+
+  color: #197044;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* titik status */
+#schoolPage .menu-card p:last-of-type::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  margin-right: 7px;
+
+  border-radius: 50%;
+
+  background: #238653;
+}
+
+/* TOMBOL LIHAT SISWA */
+#schoolPage .menu-card button {
+  width: 100%;
+
+  height: 48px;
+
+  margin-top: 15px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #176b46,
+    #238653
+  );
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 15px rgba(23, 107, 70, 0.18);
+}
+
+/* efek tombol */
+#schoolPage .menu-card button:active {
+  transform: scale(0.98);
+}
+
+/* HP */
+@media (max-width: 600px) {
+
+  #schoolPage {
+    padding: 20px 13px 105px;
+  }
+
+  #schoolPage h2 {
+    font-size: 25px;
+  }
+
+  #schoolPage .menu-card {
+    padding: 18px 16px 17px 20px;
+    border-radius: 20px;
+  }
+
+  #schoolPage .menu-card h3 {
+    font-size: 16px;
+  }
+
+  #schoolPage .menu-card p {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   CATERING MAMA
+   HALAMAN LAINNYA - MODERN
+   ========================================================= */
+
+#morePage {
+  min-height: 100vh;
+  padding: 24px 14px 115px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 90% 8%,
+      rgba(78, 158, 103, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 5% 75%,
+      rgba(120, 180, 130, 0.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      #eef8f1 0%,
+      #ffffff 42%,
+      #f8fbf9 100%
+    );
+
+  color: #173f32;
+}
+
+/* =========================================================
+   JUDUL HALAMAN
+   ========================================================= */
+
+#morePage h2 {
+  margin: 0;
+
+  color: #123f30;
+
+  font-size: 29px;
+  font-weight: 850;
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+}
+
+#morePage > p {
+  margin: 8px 0 24px;
+
+  color: #687c72;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CARD FITUR
+   ========================================================= */
+
+#morePage .menu-card {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 22px 20px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e2eee6;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 10px 30px rgba(28, 78, 54, 0.08);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#morePage .menu-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 35px rgba(28, 78, 54, 0.12);
+}
+
+/* Garis hijau dekoratif */
+
+#morePage .menu-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 5px;
+
+  background: #238653;
+}
+
+/* =========================================================
+   JUDUL BANK MENU
+   ========================================================= */
+
+#morePage .menu-card h3 {
+  margin: 0 0 9px;
+
+  color: #143f31;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+#morePage .menu-card p {
+  margin: 0;
+
+  color: #687b72;
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   ICON BANK MENU
+   ========================================================= */
+
+#morePage .menu-card h3::first-letter {
+  font-size: 24px;
+}
+
+/* =========================================================
+   TOMBOL BANK MENU
+   ========================================================= */
+
+#morePage #openBankMenu {
+  width: 100%;
+
+  min-height: 56px;
+
+  margin-top: 18px;
+
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #176b46,
+      #238653
+    );
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  letter-spacing: 0.1px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 9px 20px rgba(23, 107, 70, 0.22);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+#morePage #openBankMenu:hover {
+  box-shadow:
+    0 13px 26px rgba(23, 107, 70, 0.28);
+
+  transform: translateY(-1px);
+}
+
+#morePage #openBankMenu:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   TAMBAHAN: EFEK KARTU BANK MENU
+   ========================================================= */
+
+#morePage .menu-card:first-of-type {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f5fbf7 100%
+    );
+}
+
+/* Dekorasi lembut */
+
+#morePage .menu-card:first-of-type::after {
+  content: "🌿";
+
+  position: absolute;
+
+  right: 15px;
+  top: 12px;
+
+  font-size: 42px;
+
+  opacity: 0.08;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   JIKA ADA FITUR LAIN
+   ========================================================= */
+
+#morePage .feature-card {
+  padding: 20px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eee8;
+
+  box-shadow:
+    0 8px 24px rgba(28, 78, 54, 0.07);
+}
+
+/* =========================================================
+   RESPONSIVE HP
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #morePage {
+    padding: 19px 13px 105px;
+  }
+
+  #morePage h2 {
+    font-size: 26px;
+  }
+
+  #morePage > p {
+    font-size: 14px;
+  }
+
+  #morePage .menu-card {
+    padding: 19px 17px;
+
+    border-radius: 21px;
+  }
+
+  #morePage .menu-card h3 {
+    font-size: 19px;
+  }
+
+  #morePage .menu-card p {
+    font-size: 13px;
+  }
+
+  #morePage #openBankMenu {
+    min-height: 53px;
+
+    font-size: 15px;
+
+    border-radius: 15px;
+  }
+}
+
+/* =========================================================
+   CATERING MAMA
+   HALAMAN LAINNYA - MODERN
+   ========================================================= */
+
+#morePage {
+  min-height: 100vh;
+  padding: 24px 14px 115px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 90% 8%,
+      rgba(78, 158, 103, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 5% 75%,
+      rgba(120, 180, 130, 0.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      #eef8f1 0%,
+      #ffffff 42%,
+      #f8fbf9 100%
+    );
+
+  color: #173f32;
+}
+
+/* =========================================================
+   JUDUL HALAMAN
+   ========================================================= */
+
+#morePage h2 {
+  margin: 0;
+
+  color: #123f30;
+
+  font-size: 29px;
+  font-weight: 850;
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+}
+
+#morePage > p {
+  margin: 8px 0 24px;
+
+  color: #687c72;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CARD BANK MENU
+   ========================================================= */
+
+#morePage .menu-card {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 22px 20px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e2eee6;
+  border-radius: 25px;
+
+  /* PUTIH, BUKAN HIJAU */
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(28, 78, 54, 0.08);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#morePage .menu-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 35px rgba(28, 78, 54, 0.12);
+}
+
+/* Garis hijau di kiri */
+
+#morePage .menu-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 5px;
+
+  background: #238653;
+}
+
+/* =========================================================
+   JUDUL BANK MENU
+   ========================================================= */
+
+#morePage .menu-card h3 {
+  margin: 0 0 9px;
+
+  color: #174d39;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   DESKRIPSI BANK MENU
+   ========================================================= */
+
+#morePage .menu-card p {
+  margin: 0;
+
+  color: #687b72;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+#morePage .menu-card h3::first-letter {
+  font-size: 24px;
+}
+
+/* =========================================================
+   TOMBOL BUKA BANK MENU
+   ========================================================= */
+
+#morePage #openBankMenu {
+  width: 100%;
+
+  min-height: 56px;
+
+  margin-top: 18px;
+
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #176b46,
+      #238653
+    );
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  letter-spacing: 0.1px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 9px 20px rgba(23, 107, 70, 0.22);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+#morePage #openBankMenu:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 13px 26px rgba(23, 107, 70, 0.28);
+}
+
+#morePage #openBankMenu:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   DEKORASI BANK MENU
+   ========================================================= */
+
+#morePage .menu-card:first-of-type {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f7fbf8 100%
+    );
+}
+
+#morePage .menu-card:first-of-type::after {
+  content: "🌿";
+
+  position: absolute;
+
+  right: 15px;
+  top: 12px;
+
+  font-size: 42px;
+
+  opacity: 0.07;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   RESPONSIVE HP
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #morePage {
+    padding: 19px 13px 105px;
+  }
+
+  #morePage h2 {
+    font-size: 26px;
+  }
+
+  #morePage > p {
+    font-size: 14px;
+  }
+
+  #morePage .menu-card {
+    padding: 19px 17px;
+
+    border-radius: 21px;
+  }
+
+  #morePage .menu-card h3 {
+    font-size: 19px;
+  }
+
+  #morePage .menu-card p {
+    font-size: 13px;
+  }
+
+  #morePage #openBankMenu {
+    min-height: 53px;
+
+    font-size: 15px;
+
+    border-radius: 15px;
+  }
+}
+/* ==========================================
+   BANK MENU - TULISAN LEBIH TERANG
+   ========================================== */
+
+#morePage .menu-card h3 {
+  color: #ffffff !important;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+#morePage .menu-card p {
+  color: #eaf7ee !important;
+  font-weight: 500;
+}
+
+/* Icon tetap jelas */
+#morePage .menu-card h3::first-letter {
+  color: #ffffff !important;
+}
+
+/* Hilangkan dekorasi yang terlalu mengganggu */
+#morePage .menu-card:first-of-type::after {
+  opacity: 0.04;
+}
+
+/* ===== LAPTOP ===== */
+
+@media (min-width: 601px) {
+  body {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .menu-card {
+    border-radius: 24px;
+  }
+
+  /* contoh card bisa berdampingan */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+
+/* ===== HP ===== */
+
+@media (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .menu-card {
+    border-radius: 18px;
+  }
+}
+
+/* =========================================================
+   BOTTOM NAVIGATION
+   LAPTOP & HP BERBEDA
+   ========================================================= */
+
+
+/* =========================================================
+   💻 LAPTOP / DESKTOP
+   ========================================================= */
+
+@media (min-width: 601px) {
+
+  .bottom-nav {
+    position: fixed !important;
+
+    left: 50% !important;
+    bottom: 22px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 760px !important;
+    max-width: calc(100% - 80px);
+
+    height: 78px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 8px 18px !important;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid #e2ebe5;
+
+    border-radius: 25px;
+
+    box-shadow:
+      0 12px 35px rgba(20, 65, 45, 0.14);
+
+    z-index: 9999;
+  }
+
+
+  /* ITEM MENU */
+
+  .bottom-nav .nav-item {
+    flex: 1;
+
+    height: 62px;
+
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    margin: 0 4px;
+
+    border-radius: 17px;
+
+    color: #708078;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.15s ease;
+  }
+
+
+  /* ITEM AKTIF */
+
+  .bottom-nav .nav-item.active {
+    background: #eaf6ee;
+
+    color: #176b46;
+
+    font-weight: 800;
+  }
+
+
+  /* HOVER */
+
+  .bottom-nav .nav-item:hover {
+    background: #f1f8f3;
+
+    color: #176b46;
+
+    transform: translateY(-2px);
+  }
+
+
+  /* SAAT DIKLIK */
+
+  .bottom-nav .nav-item:active {
+    transform: scale(0.94);
+  }
+
+
+  /* ICON */
+
+  .bottom-nav .nav-item:first-line {
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   📱 HP
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .bottom-nav {
+    position: fixed !important;
+
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+
+    height: 72px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 4px 3px !important;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border-top: 1px solid #e3ebe6;
+
+    box-shadow:
+      0 -6px 22px rgba(20, 65, 45, 0.08);
+
+    z-index: 9999;
+  }
+
+
+  /* ITEM MENU */
+
+  .bottom-nav .nav-item {
+    flex: 1;
+
+    height: 62px;
+
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    margin: 0 2px;
+
+    border-radius: 14px;
+
+    color: #77847e;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+
+  /* ITEM AKTIF */
+
+  .bottom-nav .nav-item.active {
+    background: #eaf6ee;
+
+    color: #176b46;
+
+    font-weight: 800;
+  }
+
+
+  /* SAAT DIKLIK */
+
+  .bottom-nav .nav-item:active {
+    background: #f0f8f3;
+
+    transform: scale(0.95);
+  }
+}

@@ -120,131 +120,66 @@ if (addSchoolButton) {
 const addMenuButton = document.getElementById("addMenuButton");
 const menuForm = document.getElementById("menuForm");
 
-if (addMenuButton && menuForm) {
-  addMenuButton.addEventListener("click", function () {
-    menuForm.style.display = "block";
-
-    addMenuButton.style.display = "none";
-  });
-}
 // ==========================================
-// BANK MENU - LOCAL STORAGE
+// BANK MENU
 // ==========================================
 
-const saveMenuButton = document.getElementById("saveMenuButton");
-const menuList = document.getElementById("menuList");
+const saveBankMenuButton =
+  document.getElementById("saveBankMenuButton");
 
-// Ambil menu yang sudah tersimpan
-let menus = JSON.parse(localStorage.getItem("cateringMenus")) || [];
+if (saveBankMenuButton) {
+  saveBankMenuButton.addEventListener("click", function () {
 
-// ==========================================
-// TAMPILKAN MENU
-// ==========================================
+    const menuUtama =
+      document.getElementById("bankMenuUtama").value;
 
-function tampilkanMenu() {
-  menuList.innerHTML = "";
+    const laukTambahan =
+      document.getElementById("bankLaukTambahan").value;
 
-  menus.forEach(function (menu, index) {
-    const menuCard = document.createElement("div");
+    const sayur =
+      document.getElementById("bankSayur").value;
 
-    menuCard.className = "menu-card";
+    const buah =
+      document.getElementById("bankBuah").value;
 
-    menuCard.innerHTML = `
-<p> ${menu.makananPokok}</p>
-<p> ${menu.menuUtama}</p>
-<p> ${menu.laukTambahan}</p>
-<p> ${menu.sayur}</p>
-<p> ${menu.buah}</p>
-
-            <button
-                class="menu-button gunakan-menu-button"
-                data-index="${index}">
-
-                Gunakan Menu
-
-            </button>
-
-            <button
-                class="menu-button"
-                onclick="hapusMenu(${index})">
-
-                Hapus Menu
-
-            </button>
-        `;
-
-    menuList.appendChild(menuCard);
-  });
-}
-
-// ==========================================
-// SIMPAN MENU
-// ==========================================
-
-if (saveMenuButton) {
-  saveMenuButton.addEventListener("click", function () {
-    const makananPokok = document.getElementById("mainFood").value.trim();
-    const menuUtama = document.getElementById("mainMenu").value.trim();
-    const laukTambahan = document.getElementById("sideDish").value.trim();
-    const sayur = document.getElementById("vegetable").value.trim();
-    const buah = document.getElementById("fruit").value.trim();
-
-    if (
-      makananPokok === "" ||
-      menuUtama === "" ||
-      laukTambahan === "" ||
-      sayur === "" ||
-      buah === ""
-    ) {
-      alert("Lengkapi semua data menu.");
+    // Cek semua pilihan
+    if (!menuUtama || !laukTambahan || !sayur || !buah) {
+      alert("Silakan pilih semua menu terlebih dahulu.");
       return;
     }
 
-    const menuBaru = {
-      makananPokok: makananPokok,
-      menuUtama: menuUtama,
-      laukTambahan: laukTambahan,
-      sayur: sayur,
-      buah: buah,
-    };
+    // Cek hari
+    if (!selectedDay) {
+      alert("Silakan pilih hari terlebih dahulu dari Menu Mingguan.");
+      return;
+    }
 
-    menus.push(menuBaru);
-    localStorage.setItem("cateringMenus", JSON.stringify(menus));
+    // Simpan menu ke hari yang dipilih
+    weeklyMenu[selectedDay] = [
+      "Nasi Putih",
+      menuUtama,
+      laukTambahan,
+      sayur,
+      buah
+    ];
 
-    tampilkanMenu();
+    // Simpan ke Local Storage
+    localStorage.setItem(
+      "weeklyMenu",
+      JSON.stringify(weeklyMenu)
+    );
 
-    document.getElementById("mainFood").value = "";
-    document.getElementById("mainMenu").value = "";
-    document.getElementById("sideDish").value = "";
-    document.getElementById("vegetable").value = "";
-    document.getElementById("fruit").value = "";
+    alert("Menu berhasil disimpan untuk " + selectedDay);
 
-    menuForm.style.display = "none";
-    addMenuButton.style.display = "block";
+    // Kembali ke Menu Mingguan
+    selectedDay = null;
 
-    alert("Menu berhasil disimpan!");
+    hideAllPages();
+    menuPage.style.display = "block";
+
+    tampilkanMenuMingguan();
   });
 }
-
-// ==========================================
-// HAPUS MENU
-// ==========================================
-
-function hapusMenu(index) {
-  if (confirm("Hapus menu ini?")) {
-    menus.splice(index, 1);
-
-    localStorage.setItem("cateringMenus", JSON.stringify(menus));
-
-    tampilkanMenu();
-  }
-}
-
-// ==========================================
-// TAMPILKAN MENU SAAT APLIKASI DIBUKA
-// ==========================================
-
-tampilkanMenu();
 
 // ==========================================
 // DATA SISWA
@@ -404,6 +339,102 @@ if (backToSchoolButton) {
 
 const API_URL =
   "https://script.google.com/macros/s/AKfycbwG-K7ZZto2P2QzWn60HD8ESDJXTPsVqe-RRJW8XpRZ9xM7t1aBMAdBe2Gb3tkHN5if/exec";
+
+  // ==========================================
+// BANK MENU
+// ==========================================
+
+async function loadBankMenu() {
+
+  try {
+
+    const response = await fetch(
+      API_URL + "?action=bank_menu"
+    );
+
+    const result = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.message);
+    }
+
+    const data = result.data;
+
+    isiPilihanMenu(
+      "bankMenuUtama",
+      data.menuUtama,
+      "Pilih Menu Utama"
+    );
+
+    isiPilihanMenu(
+      "bankLaukTambahan",
+      data.laukTambahan,
+      "Pilih Lauk Tambahan"
+    );
+
+    isiPilihanMenu(
+      "bankSayur",
+      data.sayur,
+      "Pilih Sayur"
+    );
+
+    isiPilihanMenu(
+      "bankBuah",
+      data.buah,
+      "Pilih Buah"
+    );
+
+  } catch (error) {
+
+    console.error(
+      "Gagal memuat Bank Menu:",
+      error
+    );
+
+  }
+
+}
+
+
+// ==========================================
+// ISI DROPDOWN
+// ==========================================
+
+function isiPilihanMenu(
+  id,
+  daftarMenu,
+  teksAwal
+) {
+
+  const select =
+    document.getElementById(id);
+
+  if (!select) return;
+
+  select.innerHTML = "";
+
+  const pilihanAwal =
+    document.createElement("option");
+
+  pilihanAwal.value = "";
+  pilihanAwal.textContent = teksAwal;
+
+  select.appendChild(pilihanAwal);
+
+
+  daftarMenu.forEach(function(menu) {
+
+    const option =
+      document.createElement("option");
+
+    option.value = menu;
+    option.textContent = menu;
+
+    select.appendChild(option);
+
+  });
+
+}
 
 // ==========================================
 // AMBIL DATA SEKOLAH
@@ -660,81 +691,14 @@ function displayWeeklyMenu() {
 
 document.querySelectorAll(".edit-day-button").forEach(function (button) {
   button.addEventListener("click", function () {
-    // Simpan hari yang ingin diubah
     selectedDay = this.dataset.day;
 
-    // Sembunyikan semua halaman
     hideAllPages();
-
-    // Buka Bank Menu
     bankMenuPage.style.display = "block";
 
-    // Tampilkan Bank Menu
-    tampilkanMenu();
+    // Ambil menu terbaru dari Google Sheet
+    loadBankMenu();
   });
-});
-
-// ==========================================
-// PILIH MENU DARI BANK MENU
-// ==========================================
-
-document.addEventListener("click", function (event) {
-  const button = event.target.closest(".gunakan-menu-button");
-
-  if (!button) return;
-
-  // Pastikan sudah memilih hari
-  if (!selectedDay) {
-    alert("Silakan pilih hari terlebih dahulu.");
-
-    return;
-  }
-
-  const index = button.dataset.index;
-
-  const selectedMenu = menus[index];
-
-  if (!selectedMenu) {
-    alert("Menu tidak ditemukan.");
-
-    return;
-  }
-
-  // Masukkan menu ke hari yang dipilih
-  weeklyMenu[selectedDay] = [
-    selectedMenu.makananPokok,
-    selectedMenu.menuUtama,
-    selectedMenu.laukTambahan,
-    selectedMenu.sayur,
-    selectedMenu.buah,
-  ];
-
-  // Simpan menu mingguan
-  localStorage.setItem("weeklyMenu", JSON.stringify(weeklyMenu));
-
-  // Simpan nama hari sebelum dikosongkan
-  const dayNames = {
-    senin: "Senin",
-    selasa: "Selasa",
-    rabu: "Rabu",
-    kamis: "Kamis",
-    jumat: "Jumat",
-  };
-
-  const selectedDayName = dayNames[selectedDay];
-
-  // Reset
-  selectedDay = null;
-
-  // Kembali ke Menu Mingguan
-  hideAllPages();
-
-  menuPage.style.display = "block";
-
-  // Tampilkan perubahan
-  displayWeeklyMenu();
-
-  alert("Menu berhasil dipasang untuk " + selectedDayName);
 });
 
 // ==========================================
@@ -1813,3 +1777,5 @@ function tampilkanPorsiHariIni() {
 }
 
 tampilkanPorsiHariIni();
+// Jalankan Bank Menu
+loadBankMenu();

@@ -6,7 +6,7 @@
 
     <title>Catering Mama</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
@@ -220,57 +220,68 @@
 
       <!-- ================= BANK MENU ================= -->
 
-      <section id="bankMenuPage" class="page" style="display: none">
-        <h2>📚 Bank Menu</h2>
+<section id="bankMenuPage" class="page" style="display: none">
 
-        <p>Kumpulan paket menu catering</p>
+  <h2>📚 Bank Menu</h2>
 
-        <!-- Tombol Tambah Menu -->
+  <p>Pilih menu dari daftar yang tersedia</p>
 
-        <button class="menu-button" id="addMenuButton">➕ Tambah Menu</button>
+  <!-- MAKANAN POKOK -->
+  <div class="menu-card">
+    <h3>🍚 Makanan Pokok</h3>
 
-        <!-- Form Tambah Menu -->
+    <div class="selected-menu">
+      Nasi Putih
+    </div>
+  </div>
 
-        <div id="menuForm" class="menu-form">
-          <h3>Tambah Paket Menu</h3>
 
-          <!-- Makanan Pokok -->
-          <label for="mainFood"> Makanan Pokok </label>
+  <!-- MENU UTAMA -->
+  <div class="menu-card">
+    <h3>🍗 Menu Utama</h3>
 
-          <input type="text" id="mainFood" placeholder="Contoh: Nasi Putih" />
+    <select id="bankMenuUtama">
+      <option value="">Pilih Menu Utama</option>
+    </select>
+  </div>
 
-          <!-- Menu Utama -->
-          <label for="mainMenu"> Menu Utama </label>
 
-          <input type="text" id="mainMenu" placeholder="Contoh: Ayam Kecap" />
+  <!-- LAUK TAMBAHAN -->
+  <div class="menu-card">
+    <h3>🍳 Lauk Tambahan</h3>
 
-          <!-- Lauk Tambahan -->
-          <label for="sideDish"> Lauk Tambahan </label>
+    <select id="bankLaukTambahan">
+      <option value="">Pilih Lauk Tambahan</option>
+    </select>
+  </div>
 
-          <input type="text" id="sideDish" placeholder="Contoh: Telur" />
 
-          <!-- Sayur -->
-          <label for="vegetable"> Sayur </label>
+  <!-- SAYUR -->
+  <div class="menu-card">
+    <h3>🥬 Sayur</h3>
 
-          <input type="text" id="vegetable" placeholder="Contoh: Sayur Sop" />
+    <select id="bankSayur">
+      <option value="">Pilih Sayur</option>
+    </select>
+  </div>
 
-          <!-- Buah -->
-          <label for="fruit"> Buah </label>
 
-          <input type="text" id="fruit" placeholder="Contoh: Pisang" />
-          <!-- Tombol Simpan -->
+  <!-- BUAH -->
+  <div class="menu-card">
+    <h3>🍌 Buah</h3>
 
-          <button class="menu-button" id="saveMenuButton">
-            💾 Simpan Menu
-          </button>
-        </div>
+    <select id="bankBuah">
+      <option value="">Pilih Buah</option>
+    </select>
+  </div>
 
-        <!-- Tempat menu yang sudah disimpan -->
 
-        <div id="menuList">
-          <!-- Menu akan muncul di sini -->
-        </div>
-      </section>
+  <!-- SIMPAN -->
+  <button class="menu-button" id="saveBankMenuButton">
+    💾 Simpan Menu
+  </button>
+
+</section>
 
       <!-- ================= LAINNYA ================= -->
 
@@ -318,6 +329,6 @@
 
     <!-- ================= JAVASCRIPT ================= -->
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
